@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Print Slack Member ID",
+  "author": "msroz",
+  "short_name": "Print Slack Member ID",
+  "description": "Print Slack Member ID",
+  "version": "0.1.0",
+  "homepage_url": "http://extensionizr.com",
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.slack.com/*"],
+      "js": ["src/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon128.png"
+  },
+  "background": {
+    "scripts" : ["src/background.js"]
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
